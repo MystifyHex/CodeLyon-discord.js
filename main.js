@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+require('dotenv').config();
 const client = new Discord.Client();
 
 client.commands = new Discord.Collection();
@@ -8,4 +9,4 @@ client.events = new Discord.Collection();
     require(`./handlers/${handler}`)(client, Discord)
 })
 
-client.login('Your Token Here!');
+client.login(process.env.DISCORD_TOKEN);
